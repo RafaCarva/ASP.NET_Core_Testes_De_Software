@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Demo.Tests
@@ -14,11 +11,13 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
-            Assert.Equal("Rafael Carvalho", nomeCompleto);
+            Assert.Equal("Eduardo Pires", nomeCompleto);
         }
+
+
 
         [Fact]
         public void StringsTools_UnirNomes_DeveIgnorarCase()
@@ -27,11 +26,13 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
-            Assert.Equal("RAFAEL CARVALHO", nomeCompleto, true); // O 5º overload mostra esse bool como 3º parâmetro
+            Assert.Equal("EDUARDO PIRES", nomeCompleto, true);
         }
+
+
 
         [Fact]
         public void StringsTools_UnirNomes_DeveConterTrecho()
@@ -40,11 +41,12 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
-            Assert.Contains("alho", nomeCompleto);
+            Assert.Contains("ardo", nomeCompleto);
         }
+
 
         [Fact]
         public void StringsTools_UnirNomes_DeveComecarCom()
@@ -53,11 +55,12 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
-            Assert.StartsWith("Raf", nomeCompleto);
+            Assert.StartsWith("Edu", nomeCompleto);
         }
+
 
         [Fact]
         public void StringsTools_UnirNomes_DeveAcabarCom()
@@ -66,11 +69,12 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
-            Assert.EndsWith("lho", nomeCompleto);
+            Assert.EndsWith("res", nomeCompleto);
         }
+
 
         [Fact]
         public void StringsTools_UnirNomes_ValidarExpressaoRegular()
@@ -79,7 +83,7 @@ namespace Demo.Tests
             var sut = new StringsTools();
 
             // Act
-            var nomeCompleto = sut.Unir("Rafael", "Carvalho");
+            var nomeCompleto = sut.Unir("Eduardo", "Pires");
 
             // Assert
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", nomeCompleto);

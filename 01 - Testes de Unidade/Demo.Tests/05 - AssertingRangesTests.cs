@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Demo.Tests
 {
@@ -17,7 +15,7 @@ namespace Demo.Tests
         public void Funcionario_Salario_FaixasSalariaisDevemRespeitarNivelProfissional(double salario)
         {
             // Arrange & Act
-            var funcionario = new Funcionario("Rafael", salario);
+            var funcionario = new Funcionario("Eduardo", salario);
 
             // Assert
             if (funcionario.NivelProfissional == NivelProfissional.Junior)

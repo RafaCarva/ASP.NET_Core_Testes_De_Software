@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Demo.Tests
@@ -19,7 +16,7 @@ namespace Demo.Tests
             // Assert
             Assert.Equal(3, result);
         }
-
+        
         [Fact]
         public void Calculadora_Somar_NaoDeveSerIgual()
         {
@@ -27,10 +24,10 @@ namespace Demo.Tests
             var calculadora = new Calculadora();
 
             // Act
-            var result = calculadora.Somar(1.13123123, 2.2312313123);
+            var result = calculadora.Somar(1.13123123123, 2.2312313123);
 
             // Assert
-            Assert.NotEqual(3.3, result, 1); // o 3ª parâmetro é a precisão 
+            Assert.NotEqual(3.3, result,1);
         }
     }
 }

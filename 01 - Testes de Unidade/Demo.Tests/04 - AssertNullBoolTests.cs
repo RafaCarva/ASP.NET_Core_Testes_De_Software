@@ -1,6 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Demo.Tests
@@ -14,18 +11,19 @@ namespace Demo.Tests
             var funcionario = new Funcionario("", 1000);
 
             // Assert
-            Assert.False(string.IsNullOrEmpty(funcionario.Nome)); // Veja o construtor de Funcionario, esse nome nunca será vazio
+            Assert.False(string.IsNullOrEmpty(funcionario.Nome));
         }
 
         [Fact]
         public void Funcionario_Apelido_NaoDeveTerApelido()
         {
             // Arrange & Act
-            var funcionario = new Funcionario("Rafael", 1000);
+            var funcionario = new Funcionario("Eduardo", 1000);
 
             // Assert
             Assert.Null(funcionario.Apelido);
-            // Assert
+
+            // Assert Bool
             Assert.True(string.IsNullOrEmpty(funcionario.Apelido));
             Assert.False(funcionario.Apelido?.Length > 0);
         }

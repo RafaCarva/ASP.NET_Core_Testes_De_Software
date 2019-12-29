@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using Xunit;
 
 namespace Demo.Tests
 {
@@ -21,10 +18,12 @@ namespace Demo.Tests
         }
 
         [Theory]
-        [InlineData(1, 1, 2)]
-        [InlineData(10, 1, 11)]
-        [InlineData(20, 150, 170)]
-        [InlineData(0, 1, 1)]
+        [InlineData(1,1,2)]
+        [InlineData(2, 2, 4)]
+        [InlineData(4, 2, 6)]
+        [InlineData(7, 3, 10)]
+        [InlineData(6, 6, 12)]
+        [InlineData(9, 9, 18)]
         public void Calculadora_Somar_RetornarValoresSomaCorretos(double v1, double v2, double total)
         {
             // Arrange
