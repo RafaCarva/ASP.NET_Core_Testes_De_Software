@@ -2,6 +2,11 @@
 
 namespace Features.Tests
 {
+    /*
+     * Essa notação torna possível a injeção de dependência.
+     * 
+     * A classe ClienteTestFixture está anotada como "[CollectionDefinition..."
+     */
     [Collection(nameof(ClienteCollection))]
     public class ClienteTesteValido
     {
