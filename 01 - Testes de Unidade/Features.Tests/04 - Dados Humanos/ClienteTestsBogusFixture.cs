@@ -31,6 +31,7 @@ namespace Features.Tests
 
         public IEnumerable<Cliente> GerarClientes(int quantidade, bool ativo)
         {
+            // Gênero random criado pelo Faker(Bogus).
             var genero = new Faker().PickRandom<Name.Gender>();
 
             //var email = new Faker().Internet.Email("eduardo","pires","gmail");
@@ -43,13 +44,13 @@ namespace Features.Tests
                     f.Name.FirstName(genero),
                     f.Name.LastName(genero),
                     f.Date.Past(80,DateTime.Now.AddYears(-18)),
-                    "",
+                    "",// Esse campo de email será preenchido logo abaixo (usando os nomes criados acima)
                     ativo,
                     DateTime.Now))
                 .RuleFor(c=>c.Email, (f,c) => 
                     f.Internet.Email(c.Nome.ToLower(), c.Sobrenome.ToLower()));
 
-            return clientes.Generate(quantidade);
+            return clientes.Generate(quantidade); // o generate(x) é do Bogus
         }
 
         public Cliente GerarClienteInvalido()
